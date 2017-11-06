@@ -64,10 +64,11 @@ table {
   height: 549px;
 }
 
-td {
+tr, td {
   border: 1px solid;
 }
 
-tr {
-  border: 1px solid;
-}
+/*#circle {
+  border-radius: 50%;
+  display: inline-block;
+}*/
