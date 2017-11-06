@@ -2,22 +2,38 @@ body {
   font-family: sans-serif;
 }
 
-#title {
+.container-fluid {
+  /*border: 1px solid;*/
+  width: 66%;
+  margin-left: 300px;
+}
+
+.row {
+  margin-top: 15px;
   border: 1px solid;
-  height: 800px;
-  width: 1000px;
-  margin-top: 20px;
+  height: 550px;
+}
+
+.row2 {
+  margin-top: 15px;
+  border: 1px solid;
+  height: 75px;
+}
+
+.col-md-12 {
+  height: 60px;
+}
+
+.playerIndicator {
+  width: 290px;
+  height: 460px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 5px;
 }
 
 h1 {
   text-align: center;
-}
-
-#instructions {
-  height: 100px;
-  width: 250px;
-  float: left;
-  border: 1px solid;
 }
 
 p {
@@ -30,6 +46,14 @@ p {
 
 button {
   width: 50%;
+  margin-top: 15px;
   margin-left: 380px;
-  height: 40px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+}
+
+img {
+  margin-left: 453px;
 }
