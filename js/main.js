@@ -1,9 +1,6 @@
 function Connect4() {
 
-
-
-
-
+//global variables
 
 //calling the bringGame function
 bringGame();
@@ -13,6 +10,7 @@ bringGame();
 function bringGame(){
   $("button").click(function(){
     $(this).hide();
+    $(".GameArea").load();
   })
 }
 
@@ -31,6 +29,6 @@ function bringGame(){
 
 
 
-// hey there
+// hey there random comment
 
 Connect4();
