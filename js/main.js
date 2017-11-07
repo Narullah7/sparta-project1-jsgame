@@ -3,14 +3,13 @@
   //
   $('.click').on('click', function(){
     console.log('working');
-    var input = $(".1");
-    counter = 0;
-    for (counter = 0;counter<26 ;counter++){
-    if (counter % 2 === 0) {
-      input.addClass("redCircle");
+    var input = $(".1").eq();
+    for (input = 0; input<4 ; input++){
+    if (input % 2 === 0) {
+      $(".1").addClass("yellowCircle");
       console.log("This is red");
-    } else if (counter % 2 != 0) {
-      input.addClass("yellowCircle");
+    } else if (input % 2 != 0) {
+      $(".1").addClass("redCircle");
       console.log("this is yellow");
     } else {
       console.log("Error");
