@@ -69,15 +69,15 @@ tr, td {
 }
 
 .redCircle {
-  background-color: red;
-  width: 229px;
-  height: 108px;
-  border-radius: 50%;
+  background-color: red;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
 }
 
 .yellowCircle {
   background-color: yellow;
-  width: 229px;
+  width: 108px;
   height: 108px;
   border-radius: 50%;
 }
