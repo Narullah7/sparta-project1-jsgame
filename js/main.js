@@ -3,10 +3,10 @@ $( document ).ready(function() {
 
   // global variables
   var player1 = true;
-  var player1color = "rgb(86, 151, 255)";
+  var player1color = "blue";
 
   var player2 = false;
-  var player2color = "rgb(255, 255, 0)";
+  var player2color = "yellow";
 
   var $winningCombinations = $([0,1,2,3],[1,2,3,4],[5,6,7,8],[6,7,8,9]);
 
@@ -41,8 +41,16 @@ $( document ).ready(function() {
   var currentPlayer = 1;
   var currentColor = player1color;
 
+  // when the user clicks the main board
   $(".board button").on("click",function(){
     console.log("clicked");
+
+  if (currentPlayer === 1){
+    $("h3").html("Yellow's turn, pick a column to drop into.");
+  } else if (currentPlayer !== 1) {
+    $("h3").html("Blue's turn, pick a column to drop into");
+  }
+
     var Chosen = $(this).closest("td").index();
     var bottomColumn = checkColumn(Chosen);
 
@@ -51,11 +59,11 @@ $( document ).ready(function() {
     // browser prints the winner whenever they have matched either
     // vertically, horizontally or diagonally
     if (horizontalCheck() === true){
-      alert("Horizontal win");
+      $("h3").html("Well done " + currentColor + " you won");
     } else if (verticalCheck() === true) {
-      alert("vertical win");
+      $("h3").html("Well done " + currentColor + " you won");
     }else if (diagonalCheck() === true) {
-      alert("diagonal win");
+      $("h3").html("Well done " + currentColor + " you won");
     }
 
     currentPlayer = currentPlayer * -1
@@ -111,6 +119,7 @@ $( document ).ready(function() {
   }
 }
 
+// diagonal winner
 function diagonalCheck(){
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 5; j++) {
