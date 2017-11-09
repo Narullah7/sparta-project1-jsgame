@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+  console.log( "ready!" );
 
   // global variables
   var player1 = true;
@@ -48,10 +48,14 @@ $( document ).ready(function() {
 
     RedOrYellow(bottomColumn,Chosen,currentColor);
 
+    // browser prints the winner whenever they have matched either
+    // vertically, horizontally or diagonally
     if (horizontalCheck() === true){
       alert("Horizontal win");
     } else if (verticalCheck() === true) {
       alert("vertical win");
+    }else if (diagonalCheck() === true) {
+      alert("diagonal win");
     }
 
     currentPlayer = currentPlayer * -1
@@ -78,9 +82,9 @@ $( document ).ready(function() {
   //checking horizontally.
   function horizontalCheck(){
     //checking the rows from index 0 to 4
-    for (var i = 0; i< 4; i++){
+    for (var i = 0; i< 5; i++){
       //checking the columns from index 0 to 4
-      for (var j = 0; j < 4; j++) {
+      for (var j = 0; j < 5; j++) {
         if (Checkwinner(returnColor(i,j), returnColor(i,j+1), returnColor(i,j+2), returnColor(i,j+3))){
           winner(i,j);
           return true;
@@ -94,9 +98,9 @@ $( document ).ready(function() {
   //vertical winner
   function verticalCheck(){
     // checking the rows
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 5; i++) {
       // checking the columns
-      for (var j = 0; j < 4; j++) {
+      for (var j = 0; j < 5; j++) {
         if ( Checkwinner(returnColor(i,j), returnColor(i+1,j), returnColor(i+2,j), returnColor(i+3,j)  ) ){
           winner(i,j);
           return true;
@@ -108,9 +112,17 @@ $( document ).ready(function() {
 }
 
 function diagonalCheck(){
-  for (var i = 0; i < 4; i++) {
-    for (var i = 0; i < array.length; i++) {
-      array[i]
+  for (var i = 0; i < 5; i++) {
+    for (var j = 0; j < 5; j++) {
+      if ( Checkwinner(returnColor(i,j), returnColor(i+1,j+1), returnColor(i+2,j+2),returnColor(i+3,j+3)) ) {
+        winner(i,j);
+        return true;
+      } else if (Checkwinner(returnColor(i,j),returnColor(i-1,j+1),returnColor(i-2,j+2),returnColor(i-3,j+3) )) {
+        winner(i,j);
+        return true;
+      } else {
+        continue
+      }
     }
   }
 }
