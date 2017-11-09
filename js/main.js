@@ -6,6 +6,16 @@ $( document ).ready(function() {
   var player1color = "blue";
   var player2 = false;
   var player2color = "yellow";
+  // create a function which gives me game sounds
+  function audioDropChip(){
+    DropChip = new Audio("sounds/button-20.mp3");
+    DropChip.play();
+  }
+
+  function audioVictory(){
+    victory = new Audio("sounds/applause3.mp3");
+    victory.play();
+  }
   //game is running
   var gameRunning = true;
   var table = $("table tr");
@@ -42,6 +52,7 @@ $( document ).ready(function() {
   // when the user clicks the main board
   $(".board button").on("click",function(){
     console.log("clicked");
+    audioDropChip();
 
     if (currentPlayer === 1){
       $("h3").html("Yellow's turn, pick a column to drop into.").addClass("displayWinner");
@@ -59,12 +70,15 @@ $( document ).ready(function() {
     if (horizontalCheck() === true){
       $("h3").html("Well done '" + currentColor + "' you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
       $(".board").hide();
+      audioVictory();
     } else if (verticalCheck() === true) {
       $("h3").html("Well done '" + currentColor + "' you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
       $(".board").hide();
+      audioVictory();
     }else if (diagonalCheck() === true) {
       $("h3").html("Well done '" + currentColor + "' you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
       $(".board").hide();
+      audioVictory();
     }
 
     currentPlayer = currentPlayer * -1
