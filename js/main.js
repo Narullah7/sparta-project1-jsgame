@@ -47,9 +47,9 @@ $( document ).ready(function() {
     console.log("clicked");
 
     if (currentPlayer === 1){
-      $("h3").html("Yellow's turn, pick a column to drop into.");
+      $("h3").html("Yellow's turn, pick a column to drop into.").addClass("displayWinner");
     } else if (currentPlayer !== 1) {
-      $("h3").html("Blue's turn, pick a column to drop into");
+      $("h3").html("Blue's turn, pick a column to drop into").addClass("displayWinner");
     }
 
     var Chosen = $(this).closest("td").index();
@@ -60,11 +60,11 @@ $( document ).ready(function() {
     // browser prints the winner whenever they have matched either
     // vertically, horizontally or diagonally
     if (horizontalCheck() === true){
-      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again");
+      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again").addClass("displayWinner");
     } else if (verticalCheck() === true) {
-      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again");
+      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again").addClass("displayWinner");
     }else if (diagonalCheck() === true) {
-      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again");
+      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again").addClass("displayWinner");
     }
 
     currentPlayer = currentPlayer * -1

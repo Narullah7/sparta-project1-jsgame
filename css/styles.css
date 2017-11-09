@@ -23,3 +23,10 @@ tr td {
   color: white;
   background-color: black
 }
+
+.displayWinner {
+  color: white;
+  background-color: black;
+  height: 50px;
+  width: 500px;
+}
