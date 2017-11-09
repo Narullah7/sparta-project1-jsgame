@@ -57,13 +57,13 @@ $( document ).ready(function() {
     // browser prints the winner whenever they have matched either
     // vertically, horizontally or diagonally
     if (horizontalCheck() === true){
-      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
+      $("h3").html("Well done '" + currentColor + "' you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
       $(".board").hide();
     } else if (verticalCheck() === true) {
-      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
+      $("h3").html("Well done '" + currentColor + "' you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
       $(".board").hide();
     }else if (diagonalCheck() === true) {
-      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
+      $("h3").html("Well done '" + currentColor + "' you won, press the reset button to play again").addClass("displayWinner").css("height","100px");
       $(".board").hide();
     }
 
