@@ -8,6 +8,11 @@ $( document ).ready(function() {
   var player2 = false;
   var player2color = "rgb(255, 255, 0)";
 
+  var $winningCombinations = $([0,1,2,3],[1,2,3,4],[5,6,7,8],[6,7,8,9]);
+
+
+
+
   //game is running
   var gameRunning = true;
   var table = $("table tr");
@@ -37,10 +42,15 @@ $( document ).ready(function() {
   var currentColor = player1color;
 
   $(".board button").on("click",function(){
+    console.log("clicked");
     var Chosen = $(this).closest("td").index();
     var bottomColumn = checkColumn(Chosen);
 
     RedOrYellow(bottomColumn,Chosen,currentColor);
+
+    if (horizontalCheck() === true){
+      alert("Horizontal win");
+    }
 
     currentPlayer = currentPlayer * -1
 
@@ -52,26 +62,36 @@ $( document ).ready(function() {
   })
 
   // check the winner if all columns are vertically, horizontally and diagonally the same.
-  // except when the background-color = gray and it goes out of the page.
+  // except when the background-color = gray and if it goes out of the page.
   function Checkwinner(a,b,c,d) {
-    return ((a === b) && (a === c) && (a === d) && (a !== "rgb(128, 128, 128)"))
+    return (a === b && a === c && a === d && a !== "rgb(128, 128, 128)" && a !== undefined);
   }
 
   // console log the winner
   function winner(rowInd,colInd){
-  console.log("winner");
+  console.log("You won the game from " + rowInd + " to " + colInd );
+  console.log(rowInd);
+  console.log(colInd);
   }
-  //checking vertically.
+  //checking horizontally.
   function horizontalCheck(){
     //checking the rows from index 0 to 4
     for (var i = 0; i< 4; i++){
       //checking the columns from index 0 to 4
-      for (var j = 0; i < 4; j++) {
+      for (var j = 0; j < 4; j++) {
         if (Checkwinner(returnColor(i,j), returnColor(i,j+1), returnColor(i,j+2), returnColor(i,j+3))){
-
+          winner(i,j);
+          return true
+        } else {
+          continue;
         }
       }
     }
   }
+
+
+
+
+
 
 });
