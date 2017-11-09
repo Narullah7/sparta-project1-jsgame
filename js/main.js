@@ -4,19 +4,16 @@ $( document ).ready(function() {
   // global variables
   var player1 = true;
   var player1color = "blue";
-
   var player2 = false;
   var player2color = "yellow";
-
-  // the rest button resets the board
-  $(".reset").click(function(){
-    location.reload();
-  })
-
-
   //game is running
   var gameRunning = true;
   var table = $("table tr");
+
+  // button that resets the board
+  $(".reset").click(function(){
+    location.reload();
+  })
 
   function RedOrYellow(row,col,color){
     // gets the individual table cell by index in a table
@@ -136,10 +133,5 @@ function diagonalCheck(){
     }
   }
 }
-
-
-
-
-
 
 });
