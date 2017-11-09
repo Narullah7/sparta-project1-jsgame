@@ -50,6 +50,8 @@ $( document ).ready(function() {
 
     if (horizontalCheck() === true){
       alert("Horizontal win");
+    } else if (verticalCheck() === true) {
+      alert("vertical win");
     }
 
     currentPlayer = currentPlayer * -1
@@ -81,13 +83,37 @@ $( document ).ready(function() {
       for (var j = 0; j < 4; j++) {
         if (Checkwinner(returnColor(i,j), returnColor(i,j+1), returnColor(i,j+2), returnColor(i,j+3))){
           winner(i,j);
-          return true
+          return true;
         } else {
           continue;
         }
       }
     }
   }
+
+  //vertical winner
+  function verticalCheck(){
+    // checking the rows
+    for (var i = 0; i < 4; i++) {
+      // checking the columns
+      for (var j = 0; j < 4; j++) {
+        if ( Checkwinner(returnColor(i,j), returnColor(i+1,j), returnColor(i+2,j), returnColor(i+3,j)  ) ){
+          winner(i,j);
+          return true;
+      } else {
+        continue;
+      }
+    }
+  }
+}
+
+function diagonalCheck(){
+  for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < array.length; i++) {
+      array[i]
+    }
+  }
+}
 
 
 
