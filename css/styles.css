@@ -88,3 +88,11 @@ tr, td {
   height: 100px;
   border-radius: 50%;
 }
+
+.reset {
+  height: 50px;
+  width: 800px;
+  border: 1px black solid;
+  color: white;
+  background-color: black
+}

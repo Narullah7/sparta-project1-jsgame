@@ -8,9 +8,10 @@ $( document ).ready(function() {
   var player2 = false;
   var player2color = "yellow";
 
-  var $winningCombinations = $([0,1,2,3],[1,2,3,4],[5,6,7,8],[6,7,8,9]);
-
-
+  // the rest button resets the board
+  $(".reset").click(function(){
+    location.reload();
+  })
 
 
   //game is running
@@ -45,11 +46,11 @@ $( document ).ready(function() {
   $(".board button").on("click",function(){
     console.log("clicked");
 
-  if (currentPlayer === 1){
-    $("h3").html("Yellow's turn, pick a column to drop into.");
-  } else if (currentPlayer !== 1) {
-    $("h3").html("Blue's turn, pick a column to drop into");
-  }
+    if (currentPlayer === 1){
+      $("h3").html("Yellow's turn, pick a column to drop into.");
+    } else if (currentPlayer !== 1) {
+      $("h3").html("Blue's turn, pick a column to drop into");
+    }
 
     var Chosen = $(this).closest("td").index();
     var bottomColumn = checkColumn(Chosen);
@@ -59,11 +60,11 @@ $( document ).ready(function() {
     // browser prints the winner whenever they have matched either
     // vertically, horizontally or diagonally
     if (horizontalCheck() === true){
-      $("h3").html("Well done " + currentColor + " you won");
+      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again");
     } else if (verticalCheck() === true) {
-      $("h3").html("Well done " + currentColor + " you won");
+      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again");
     }else if (diagonalCheck() === true) {
-      $("h3").html("Well done " + currentColor + " you won");
+      $("h3").html("Well done " + currentColor + " you won, press the reset button to play again");
     }
 
     currentPlayer = currentPlayer * -1
@@ -83,9 +84,9 @@ $( document ).ready(function() {
 
   // console log the winner
   function winner(rowInd,colInd){
-  console.log("You won the game from " + rowInd + " to " + colInd );
-  console.log(rowInd);
-  console.log(colInd);
+    console.log("You won the game from " + rowInd + " to " + colInd );
+    console.log(rowInd);
+    console.log(colInd);
   }
   //checking horizontally.
   function horizontalCheck(){
