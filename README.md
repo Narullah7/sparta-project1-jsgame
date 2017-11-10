@@ -48,4 +48,4 @@ The most challenging parts of the project were:
 [Link to my trellio showing my user stories.](https://trello.com/b/7j7W61SX/project-1-js-game)
 
 My wireframes:
-![wireframe](https://user-images.githubusercontent.com/33025280/32635938-5f2a1ab2-c5aa-11e7-878e-719dab37cff5.jpg}
+![wireframe](https://user-images.githubusercontent.com/33025280/32635938-5f2a1ab2-c5aa-11e7-878e-719dab37cff5.jpg)
